@@ -75,18 +75,6 @@ export function ClaimVerifier() {
               />
               <p className="text-xs text-muted-foreground">Enter crisis-related claims for real-time fact-checking and public safety guidance.</p>
             </div>
-
-            {/* <div className="space-y-2">
-              <Label htmlFor="topic">Topic (optional)</Label>
-              <Input
-                id="topic"
-                value={topic}
-                onChange={(e) => setTopic(e.target.value)}
-                placeholder="e.g. Landmarks, Biology, Space, Economics"
-              />
-              <p className="text-xs text-muted-foreground">Providing a topic can improve relevance and precision.</p>
-            </div> */}
-
             <div className="flex flex-wrap items-center gap-3">
               <Button type="submit" disabled={isMutating}>
                 {isMutating ? (

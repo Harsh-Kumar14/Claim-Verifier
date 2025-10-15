@@ -1,4 +1,3 @@
-// server/index.js
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -37,22 +36,12 @@ const getResult: FunctionDeclaration = {
     }
 }
 
-
-// const { ChatGoogleGenerativeAI } = require('@langchain/google-genai');
-// const { TavilySearchResults } = require("@langchain/community/tools/tavily_search");
-// const { AgentExecutor, createReactAgent } = require("langchain/agents");
-// const { pull } = require("langchain/hub");
-// const { PromptTemplate } = require("@langchain/core/prompts");
-
-// --- 1. Initialize Models and Tools ---
 const app = express();
-// --- 3. Set up the API Endpoint ---
 app.use(cors());
 app.use(express.json());
 const port = 3001;
 
 
-// --- 2. Create the Agent ---
 async function createVeritasAgent(text: string) {
 
     const chat = ai.chats.create({
@@ -95,13 +84,8 @@ async function createVeritasAgent(text: string) {
 
         RESPONSE FORMAT:
         ----------------
-        CRITICAL: You MUST respond with ONLY a raw JSON object. 
-        - NO markdown code blocks (no triple backticks with json or without)
-        - NO comments or explanations
-        - NO additional text before or after the JSON
-        - Start directly with { and end with }
-        
-        JSON Structure:
+        You MUST respond with a single, minified JSON object. No markdown, comments, or additional text.
+        Structure:
         {
           "claim": "The original user claim (exactly as submitted)",
           "status": "Verified" | "False" | "Partially True" | "Unconfirmed" | "Outdated",
