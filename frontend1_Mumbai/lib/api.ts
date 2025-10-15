@@ -102,7 +102,7 @@ function cleanJsonString(jsonString: string): string {
 }
 
 export async function verifyClaim(payload: VerifyPayload): Promise<VerificationResult> {
-  const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3001'
+  const apiBaseUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3001'
   
   try {
     const response = await fetch(`${apiBaseUrl}/verify-claim`, {
