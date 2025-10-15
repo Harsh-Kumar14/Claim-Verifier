@@ -14,7 +14,7 @@ export type BackendVerificationResult = {
 }
 
 export type VerificationResult = {
-  verdict: "true" | "false" | "unknown"
+  verdict: "true" | "false" | "partially-true" | "unknown"
   confidence: number // 0..1
   summary: string
   sources: Array<{ title?: string; url: string }>
@@ -35,6 +35,8 @@ function convertBackendResponse(backendResult: BackendVerificationResult): Verif
       verdict = "false"
       break
     case "Partially True":
+      verdict = "partially-true"
+      break
     case "Unconfirmed":
     case "Outdated":
     default:

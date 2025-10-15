@@ -14,10 +14,11 @@ import { Input } from "@/components/ui/input"
 type HistoryItem = { claim: string; result: VerificationResult }
 
 function VerdictBadge({ verdict }: { verdict: VerificationResult["verdict"] }) {
-  const map: Record<VerificationResult["verdict"], { text: string; variant: "default" | "secondary" | "destructive" }> =
+  const map: Record<VerificationResult["verdict"], { text: string; variant: "default" | "secondary" | "destructive" | "outline" }> =
     {
       true: { text: "True", variant: "default" },
       false: { text: "False", variant: "destructive" },
+      "partially-true": { text: "Partially True", variant: "outline" },
       unknown: { text: "Unknown", variant: "secondary" },
     }
   const v = map[verdict]
