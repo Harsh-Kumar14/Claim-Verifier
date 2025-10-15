@@ -95,8 +95,13 @@ async function createVeritasAgent(text: string) {
 
         RESPONSE FORMAT:
         ----------------
-        You MUST respond with a single, minified JSON object. No markdown, comments, or additional text.
-        Structure:
+        CRITICAL: You MUST respond with ONLY a raw JSON object. 
+        - NO markdown code blocks (no triple backticks with json or without)
+        - NO comments or explanations
+        - NO additional text before or after the JSON
+        - Start directly with { and end with }
+        
+        JSON Structure:
         {
           "claim": "The original user claim (exactly as submitted)",
           "status": "Verified" | "False" | "Partially True" | "Unconfirmed" | "Outdated",
