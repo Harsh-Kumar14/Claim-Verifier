@@ -14,9 +14,9 @@ import { Input } from "@/components/ui/input"
 type HistoryItem = { claim: string; result: VerificationResult }
 
 function VerdictBadge({ verdict }: { verdict: VerificationResult["verdict"] }) {
-  const map: Record<VerificationResult["verdict"], { text: string; variant: "default" | "secondary" | "destructive" | "outline" }> =
+  const map: Record<VerificationResult["verdict"], { text: string; variant: "default" | "secondary" | "destructive" | "success" | "outline" }> =
     {
-      true: { text: "True", variant: "default" },
+      true: { text: "True", variant: "success" },
       false: { text: "False", variant: "destructive" },
       "partially-true": { text: "Partially True", variant: "outline" },
       unknown: { text: "Unknown", variant: "secondary" },
